@@ -52,7 +52,7 @@ module.exports = [
     },
     function (session, results, next) {
         session.dialogData.destination = results.response;
-        session.send('Looking for hotels in %s', results.response); 
+        session.send('Looking for hotels in %s', results.response);
         next();
     },
     ...
@@ -83,7 +83,7 @@ The last step ends performing an async call to a simulated store, printing the r
     },
     function (session, results, next) {
         session.dialogData.destination = results.response;
-        session.send('Looking for hotels in %s', results.response); 
+        session.send('Looking for hotels in %s', results.response);
         next();
     },
     ...
@@ -161,7 +161,7 @@ Inevitably, you're going to want to make some asynchronous network call to retri
 
 * Use session.send within your callback or event handler.
 * Do not call session.endDialog() immediately after starting the asynchronous call;
-* Instead call session.endDialog() from within your callback or event handler. 
+* Instead call session.endDialog() from within your callback or event handler.
 
 Check out [hotels.js](hotels.js#L46-L61) where we are calling an asynchronous method that returns a Promise. Our fulfill method calls `session.send()` and is also responsible for calling `session.endDialog()`.
 
@@ -199,6 +199,8 @@ On the other hand, you will see the following in Skype.
 ![Sample Outcome](images/outcome-skype.png)
 
 ### More Information
+https://docs.microsoft.com/en-us/bot-framework/nodejs/bot-builder-nodejs-concepts
+https://github.com/Microsoft/BotBuilder-Samples
 
 To get more information about how to get started in Bot Builder for Node and Dialogs please review the following resources:
 * [Bot Builder for Node.js Reference](https://docs.microsoft.com/en-us/bot-framework/nodejs/)
@@ -210,9 +212,9 @@ To get more information about how to get started in Bot Builder for Node and Dia
 
 > **Limitations**  
 > The functionality provided by the Bot Framework Activity can be used across many channels. Moreover, some special channel features can be unleashed using the [Message.sourceEvent](https://docs.botframework.com/en-us/node/builder/chat-reference/classes/_botbuilder_d_.message.html#sourceevent) method.
-> 
+>
 > The Bot Framework does its best to support the reuse of your Bot in as many channels as you want. However, due to the very nature of some of these channels, some features are not fully portable.
-> 
+>
 > The features used in this sample are fully supported in the following channels:
 > - Skype
 > - Facebook
@@ -224,6 +226,6 @@ To get more information about how to get started in Bot Builder for Node and Dia
 > - GroupMe
 > - Kik
 > - Telegram
-> 
+>
 > On the other hand, they are not supported and the sample won't work as expected in the following channel:
 > - SMS
