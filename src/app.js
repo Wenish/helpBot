@@ -18,6 +18,7 @@ var connector = new builder.ChatConnector({
 server.post('/api/messages', connector.listen());
 
 var DialogLabels = {
+    LocalPicker: 'LocalPicker',
     Hotels: 'Hotels',
     Flights: 'Flights',
     Support: 'Support'
@@ -58,8 +59,10 @@ var bot = new builder.UniversalBot(connector, [
         }
     }
 ]);
-
-bot.dialog('flights', require('./dialogs/flights'));
+bot.dialog('localPicker', require('./dialogs/localPicker'))
+    .triggerAction({
+        matches: [/language/i, /sprache/i]
+    });
 bot.dialog('hotels', require('./dialogs/hotels'));
 bot.dialog('support', require('./dialogs/support'))
     .triggerAction({
