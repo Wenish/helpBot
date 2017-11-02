@@ -1,5 +1,5 @@
 var builder = require('botbuilder');
-var Store = require('./store');
+var Store = require('../store');
 
 module.exports = [
     // Destination
