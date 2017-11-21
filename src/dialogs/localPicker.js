@@ -3,7 +3,12 @@ var builder = require('botbuilder');
 module.exports = [
     function (session) {
         // Prompt the user to select their preferred locale
-        builder.Prompts.choice(session, "What's your preferred language?", 'English|Deutsch|Pirate');
+        builder.Prompts.choice(session,
+          "What's your preferred language?",
+          'English|Deutsch|Pirate',
+          {
+            listStyle: builder.ListStyle.button
+          });
     },
     function (session, results) {
         // Update preferred locale
