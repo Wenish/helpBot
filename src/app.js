@@ -70,10 +70,6 @@ bot.dialog('localPicker', require('./dialogs/localPicker'))
         matches: [/language/i, /sprache/i]
     });
 bot.dialog('hotels', require('./dialogs/hotels'));
-bot.dialog('support', require('./dialogs/support'))
-    .triggerAction({
-        matches: [/help/i, /support/i, /problem/i]
-    });
 
 // log any bot errors into the console
 bot.on('error', function (e) {
