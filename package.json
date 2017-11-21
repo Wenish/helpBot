@@ -4,6 +4,7 @@
   "description": "Bot Builder Sample - MultiDialogs",
   "scripts": {
     "start": "node src/app.js",
+    "dev": "node src/app.js",
     "build": "node fuse"
   },
   "author": "Microsoft Corp.",

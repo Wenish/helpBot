@@ -20,7 +20,8 @@ server.post('/api/messages', connector.listen());
 var DialogLabels = {
     LocalPicker: 'LocalPicker',
     Hotels: 'Hotels',
-    Flights: 'Flights',
+    Install: 'Install Software',
+    Deinstall: 'Deinstall Software',
     Support: 'Support'
 };
 
@@ -29,8 +30,8 @@ var bot = new builder.UniversalBot(connector, [
         // prompt for search option
         builder.Prompts.choice(
             session,
-            'Are you looking for a flight or a hotel?',
-            [DialogLabels.Flights, DialogLabels.Hotels],
+            'What do you want to do?',
+            [DialogLabels.Install, DialogLabels.Deinstall, DialogLabels.Hotels],
             {
                 maxRetries: 3,
                 retryPrompt: 'Not a valid option',
@@ -60,6 +61,10 @@ var bot = new builder.UniversalBot(connector, [
         }
     }
 ]);
+
+bot.dialog('install', require('./dialogs/install'));
+bot.dialog('deinstall', require('./dialogs/deinstall'));
+
 bot.dialog('localPicker', require('./dialogs/localPicker'))
     .triggerAction({
         matches: [/language/i, /sprache/i]
