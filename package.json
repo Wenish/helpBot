@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Bot Builder Sample - MultiDialogs",
   "scripts": {
-    "start": "node src/app.js"
+    "start": "node src/app.js",
+    "build": "node fuse"
   },
   "author": "Microsoft Corp.",
   "license": "MIT",

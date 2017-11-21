@@ -1,3 +1,19 @@
+## Dev Setup
+``` bash
+# install dependencies
+npm install
+
+# serve with hot reload at localhost:2657
+npm run dev
+
+# build for production with minification
+npm run build
+```
+
+## Prod Setup
+
+
+
 # Multi-Dialog Bot Sample
 
 A sample bot showing different kind of dialogs.
