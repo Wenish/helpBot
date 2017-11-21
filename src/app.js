@@ -21,8 +21,7 @@ var DialogLabels = {
     LocalPicker: 'LocalPicker',
     Hotels: 'Hotels',
     Install: 'Install Software',
-    Deinstall: 'Deinstall Software',
-    Support: 'Support'
+    Deinstall: 'Deinstall Software'
 };
 
 var bot = new builder.UniversalBot(connector, [
